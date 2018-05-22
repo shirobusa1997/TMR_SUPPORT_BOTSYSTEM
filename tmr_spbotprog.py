@@ -31,9 +31,9 @@ async def on_message(message):
 		await client.send_message(message.channel, 'Hello World.')
 
 	if message.content.startswith('タンヤオ') or message.content.startswith('断么九'):
-		await client.send_file(client.get_server('311480957192634369').default_channel, 'tanyao.png')
+		await client.send_file(client.get_server('<REPLACE TO TARGET SERVER ID>').default_channel, 'tanyao.png')
 
-	if messafe.content.startswith('!clanmatch'):
+	if message.content.startswith('!clanmatch'):
 		counter = 0
 		tmp = awai client.send_message(messafe.channel, 'Let\'s DICE !!!')
 		async for log in client.logs_from(messafe.channel, limit=100)
@@ -42,4 +42,4 @@ async def on_message(message):
 
 			await client.edit_message(tmp, 'You have {} messages.'. format(counter))
 			
-client.run('NDE3OTgwODkxNTE2ODk1MjM0.DXbiHQ.g4z5D2Vo5J1g4jYz3Pua_jOs5pk')
+client.run('<REPLACE TO BOT TOKEN>')
