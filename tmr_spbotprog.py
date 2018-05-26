@@ -30,10 +30,10 @@ async def on_message(message):
 	elif message.content.startswith('!hw'):
 		await client.send_message(message.channel, 'Hello World.')
 
-	if message.content.startswith('タンヤオ') or message.content.startswith('断么九'):
-		await client.send_file(client.get_server('<REPLACE TO TARGET SERVER ID>').default_channel, 'tanyao.png')
+	elif message.content.startswith('タンヤオ') or message.content.startswith('断么九'):
+		await client.send_file(client.get_server('<REPLACE TO TARGET SERVER ID>').default_channel, 'Resources/tanyao.png')
 
-	if message.content.startswith('!clanmatch'):
+	elif message.content.startswith('!clanmatch'):
 		counter = 0
 		tmp = awai client.send_message(messafe.channel, 'Let\'s DICE !!!')
 		async for log in client.logs_from(messafe.channel, limit=100)
