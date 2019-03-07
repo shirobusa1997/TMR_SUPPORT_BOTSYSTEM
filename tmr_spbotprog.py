@@ -9,7 +9,7 @@ import asyncio
 # Reference File Definition
 # ------------------------------------------------------
 
-import info
+from info import *
 
 # ------------------------------------------------------
 # Main
@@ -18,8 +18,7 @@ import info
 client = discord.Client()
 
 @client.event
-@asyncio.coroutine
-def on_ready():
+async def on_ready():
         print("-" * 20)
         print("Bot_Name :", client.user.name)
         print("Bot_ID   :", client.user.id)
@@ -27,13 +26,11 @@ def on_ready():
         print("\nREADY")
 
 @client.event
-@asyncio.coroutine
-def on_message(message):
+async def on_message(message):
         if client == message.author:
-                return
+            return
 
         if message.content.startswith('!tanyao'):
-                yield from client.send_file(client.get_server(SERVER_ID).default_channel, 'Resources/tanyao.png')
+            await client.send_file(message.channel, 'Resources/tanyao.png')
 
 client.run(BOT_TOKEN)
-
